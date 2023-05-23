@@ -7,16 +7,20 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 function App() {
     const [token, setToken] = useState("")
 
+    console.log("token", token)
+
     const account = useAccount()
 
     const getToken = useToken({
         address: token as `0x${string}`
     })
+    console.log("getToken", getToken)
 
     const tokenBalance = useBalance({
         address: account.address,
         token: getToken.data?.address
     })
+    console.log("tokenBalance", tokenBalance)
     return (
         <div className="App">
             <header className="App-header">
